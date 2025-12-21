@@ -62,11 +62,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // New vibrant colors for kids app
+        "brand-primary": "hsl(var(--brand-primary))",
+        "brand-secondary": "hsl(var(--brand-secondary))",
+        "brand-accent": "hsl(var(--brand-accent))",
+        "brand-text": "hsl(var(--brand-text))",
+        "brand-light": "hsl(var(--brand-light))",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "1rem", // More rounded
+        md: "calc(1rem - 4px)",
+        sm: "calc(1rem - 8px)",
       },
       keyframes: {
         "accordion-down": {

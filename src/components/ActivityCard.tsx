@@ -10,14 +10,14 @@ interface ActivityCardProps {
 
 const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
   return (
-    <Card className="hover:shadow-lg transition-shadow duration-200 ease-in-out h-full flex flex-col justify-between">
+    <Card className="bg-card hover:bg-brand-light hover:shadow-xl transition-all duration-300 ease-in-out h-full flex flex-col justify-between border-2 border-brand-secondary/30 rounded-xl">
       <CardHeader>
-        <CardTitle className="text-lg font-medium">{activity.title}</CardTitle>
+        <CardTitle className="text-xl font-bold text-brand-text">{activity.title}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col justify-between flex-grow">
-        <p className="text-sm text-muted-foreground mb-4">{activity.description}</p>
+        <p className="text-base text-muted-foreground mb-4">{activity.description}</p>
         <Link to={`/activities/${activity.id}`}>
-          <Button className="w-full">Start Activity</Button>
+          <Button className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold rounded-lg">Start Activity</Button>
         </Link>
       </CardContent>
     </Card>

@@ -13,12 +13,12 @@ const ActivityDetail = () => {
 
   if (!activity) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
         <Header />
         <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Activity Not Found</h2>
+          <h2 className="text-2xl font-bold text-brand-text mb-4">Activity Not Found</h2>
           <Link to="/">
-            <Button variant="outline">
+            <Button variant="outline" className="bg-brand-primary text-white hover:bg-brand-primary/90 rounded-lg">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories
             </Button>
           </Link>
@@ -29,20 +29,20 @@ const ActivityDetail = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
-        <div className="flex items-center mb-6">
+        <div className="flex items-center mb-8">
           <Link to={`/categories/${activity.categoryId}`}>
-            <Button variant="ghost" size="icon" className="mr-2">
-              <ArrowLeft className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="mr-3 text-brand-primary hover:bg-brand-light rounded-full">
+              <ArrowLeft className="h-6 w-6" />
             </Button>
           </Link>
-          <h2 className="text-3xl font-bold text-foreground">{activity.title}</h2>
+          <h2 className="text-4xl font-extrabold text-brand-text drop-shadow-sm">{activity.title}</h2>
         </div>
-        <p className="text-lg text-muted-foreground mb-8">{activity.description}</p>
+        <p className="text-lg text-muted-foreground mb-10">{activity.description}</p>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {activity.steps.map((step) => (
             <ActivityStep key={step.stepNumber} step={step} />
           ))}

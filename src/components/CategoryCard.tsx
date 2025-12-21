@@ -11,13 +11,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   const Icon = category.icon;
   return (
     <Link to={`/categories/${category.id}`}>
-      <Card className="hover:shadow-lg transition-shadow duration-200 ease-in-out h-full flex flex-col justify-between">
+      <Card className="bg-card hover:bg-brand-light hover:shadow-xl transition-all duration-300 ease-in-out h-full flex flex-col justify-between border-2 border-brand-primary/30 rounded-xl">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-lg font-medium">{category.name}</CardTitle>
-          <Icon className="h-6 w-6 text-muted-foreground" />
+          <CardTitle className="text-xl font-bold text-brand-text">{category.name}</CardTitle>
+          <Icon className="h-8 w-8 text-brand-primary" />
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground">{category.description}</p>
+          <p className="text-base text-muted-foreground">{category.description}</p>
         </CardContent>
       </Card>
     </Link>

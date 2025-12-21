@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="bg-primary text-primary-foreground p-4 shadow-md flex items-center justify-between">
-      <Link to="/" className="flex items-center space-x-2">
-        <Home className="h-6 w-6" />
-        <h1 className="text-xl font-bold">SkillCraft LittleBuilders</h1>
+    <header className="bg-brand-primary text-primary-foreground p-4 shadow-lg flex items-center justify-between rounded-b-lg">
+      <Link to="/" className="flex items-center space-x-3">
+        <Home className="h-8 w-8" />
+        <h1 className="text-2xl font-extrabold">SkillCraft LittleBuilders</h1>
       </Link>
       {/* You can add more navigation items here if needed */}
     </header>

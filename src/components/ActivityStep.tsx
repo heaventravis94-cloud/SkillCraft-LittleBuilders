@@ -8,10 +8,10 @@ interface ActivityStepProps {
 
 const ActivityStep: React.FC<ActivityStepProps> = ({ step }) => {
   return (
-    <Card className="mb-4">
+    <Card className="mb-4 bg-white shadow-md border border-brand-light rounded-lg">
       <CardContent className="p-4">
-        <h3 className="text-md font-semibold mb-2">Step {step.stepNumber}</h3>
-        <p className="text-muted-foreground">{step.description}</p>
+        <h3 className="text-lg font-bold mb-2 text-brand-primary">Step {step.stepNumber}</h3>
+        <p className="text-base text-foreground">{step.description}</p>
       </CardContent>
     </Card>
   );
