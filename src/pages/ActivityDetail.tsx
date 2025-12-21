@@ -4,12 +4,18 @@ import Header from "@/components/Header";
 import ActivityStep from "@/components/ActivityStep";
 import { getActivityById } from "@/data/skills";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CheckCircle } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { showSuccess } from "@/utils/toast"; // Import toast utility
 
 const ActivityDetail = () => {
   const { activityId } = useParams<{ activityId: string }>();
   const activity = activityId ? getActivityById(activityId) : undefined;
+
+  const handleMarkComplete = () => {
+    showSuccess(`Great job! You completed "${activity?.title}"!`);
+    // In a real app, you would save this completion status to local storage or a backend.
+  };
 
   if (!activity) {
     return (
@@ -40,12 +46,48 @@ const ActivityDetail = () => {
           </Link>
           <h2 className="text-4xl font-extrabold text-brand-text drop-shadow-sm">{activity.title}</h2>
         </div>
-        <p className="text-lg text-muted-foreground mb-10">{activity.description}</p>
+        <p className="text-lg text-muted-foreground mb-6">{activity.description}</p>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 bg-white p-6 rounded-lg shadow-md border border-brand-light">
+          <div>
+            <h3 className="text-xl font-bold text-brand-primary mb-2">Details</h3>
+            <p className="text-base text-foreground">
+              <span className="font-semibold">Skill Level:</span> {activity.skillLevel}
+            </p>
+            <p className="text-base text-foreground">
+              <span className="font-semibold">Estimated Time:</span> {activity.estimatedTime}
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-brand-primary mb-2">Supplies</h3>
+            <ul className="list-disc list-inside text-base text-foreground">
+              {activity.supplies.map((supply, index) => (
+                <li key={index}>{supply}</li>
+              ))}
+            </ul>
+          </div>
+          {activity.safetyNotes && (
+            <div className="md:col-span-2 mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 rounded-md">
+              <h4 className="font-semibold text-lg mb-1">Safety Notes:</h4>
+              <p className="text-base">{activity.safetyNotes}</p>
+            </div>
+          )}
+        </div>
+
+        <h3 className="text-3xl font-bold text-brand-text mb-6 drop-shadow-sm">Steps to Complete</h3>
         <div className="space-y-6">
           {activity.steps.map((step) => (
             <ActivityStep key={step.stepNumber} step={step} />
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Button
+            onClick={handleMarkComplete}
+            className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            <CheckCircle className="mr-3 h-6 w-6" /> Mark Activity Complete!
+          </Button>
         </div>
       </main>
       <MadeWithDyad />

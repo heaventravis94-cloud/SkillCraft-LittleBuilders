@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import CategoryCard from "@/components/CategoryCard";
 import { categories } from "@/data/skills";
 
-const Index = () => {
+const SkillLibrary = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
       <Header />
@@ -23,4 +23,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SkillLibrary;
