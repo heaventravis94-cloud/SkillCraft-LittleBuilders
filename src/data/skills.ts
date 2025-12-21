@@ -6,6 +6,8 @@ import {
   BookOpen,
   Gem,
   Hammer,
+  FlaskConical, // New icon for Mini Scientist Adventures
+  Feather,      // New icon for Storytelling & Imagination
   LucideIcon,
 } from "lucide-react";
 
@@ -71,6 +73,18 @@ export const categories: Category[] = [
     name: "Woodworking Basics",
     icon: Hammer,
     description: "Explore the basics of woodworking with safe, simple projects.",
+  },
+  {
+    id: "mini-scientist",
+    name: "Mini Scientist Adventures",
+    icon: FlaskConical,
+    description: "Explore the wonders of science with exciting experiments!",
+  },
+  {
+    id: "storytelling-imagination",
+    name: "Storytelling & Imagination",
+    icon: Feather,
+    description: "Unleash your creativity by crafting amazing stories and characters.",
   },
 ];
 
@@ -298,6 +312,60 @@ export const activities: Activity[] = [
       { stepNumber: 4, description: "Ensure all joints are secure and the birdhouse is stable." },
       { stepNumber: 5, description: "Decorate your birdhouse with paint once the glue is dry." },
       { stepNumber: 6, description: "Hang it in your garden and wait for birds to visit!" },
+    ],
+  },
+  // Mini Scientist Adventures
+  {
+    id: "baking-soda-volcano",
+    categoryId: "mini-scientist",
+    title: "Baking Soda Volcano",
+    description: "Create an exciting erupting volcano using household ingredients!",
+    steps: [
+      { stepNumber: 1, description: "Gather a small bottle, baking soda, vinegar, dish soap, red food coloring, and a tray." },
+      { stepNumber: 2, description: "Place the bottle in the center of the tray. Mold clay or foil around it to make a volcano shape." },
+      { stepNumber: 3, description: "Add 2 tablespoons of baking soda to the bottle." },
+      { stepNumber: 4, description: "Add a squirt of dish soap and a few drops of red food coloring." },
+      { stepNumber: 5, description: "Pour about 1/4 cup of vinegar into the bottle and watch it erupt!" },
+    ],
+  },
+  {
+    id: "rain-cloud-jar",
+    categoryId: "mini-scientist",
+    title: "Rain Cloud in a Jar",
+    description: "Observe how rain forms by making a mini cloud in a jar.",
+    steps: [
+      { stepNumber: 1, description: "Fill a clear jar about 3/4 full with water." },
+      { stepNumber: 2, description: "Spray shaving cream on top of the water to create a 'cloud'." },
+      { stepNumber: 3, description: "Mix blue food coloring with water in a separate small cup." },
+      { stepNumber: 4, description: "Use a dropper to gently add drops of blue water onto the shaving cream cloud." },
+      { stepNumber: 5, description: "Watch as the 'rain' falls through the cloud into the water below!" },
+    ],
+  },
+  // Storytelling & Imagination
+  {
+    id: "create-character",
+    categoryId: "storytelling-imagination",
+    title: "Create Your Own Character",
+    description: "Design a unique character for your stories.",
+    steps: [
+      { stepNumber: 1, description: "Think about what your character looks like: hair color, eye color, clothes, special features." },
+      { stepNumber: 2, description: "Decide on their personality: are they brave, shy, funny, smart?" },
+      { stepNumber: 3, description: "Give them a name and think about their favorite things or special powers." },
+      { stepNumber: 4, description: "Draw a picture of your character or write a short description." },
+      { stepNumber: 5, description: "Imagine a small adventure your character could have!" },
+    ],
+  },
+  {
+    id: "story-starter",
+    categoryId: "storytelling-imagination",
+    title: "Story Starter Challenge",
+    description: "Begin a new story with a fun prompt.",
+    steps: [
+      { stepNumber: 1, description: "Choose a story starter: 'One sunny morning, a talking squirrel...', or 'Deep in the enchanted forest, a hidden door...'" },
+      { stepNumber: 2, description: "Think about what happens next. Who is the main character? What do they discover?" },
+      { stepNumber: 3, description: "Write down or draw the first few sentences or scenes of your story." },
+      { stepNumber: 4, description: "Don't worry about finishing it, just enjoy starting!" },
+      { stepNumber: 5, description: "Share your story beginning with a friend or family member." },
     ],
   },
 ];
