@@ -24,11 +24,11 @@ const ActivityDetail = () => {
         <Header />
         <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
           <h2 className="text-2xl font-bold text-brand-text mb-4">Activity Not Found</h2>
-          <Link to="/library"> {/* Changed link to /library */}
-            <Button variant="outline" className="bg-brand-primary text-white hover:bg-brand-primary/90 rounded-lg">
+          <Button asChild variant="outline" className="bg-brand-primary text-white hover:bg-brand-primary/90 rounded-lg">
+            <Link to="/library"> {/* Corrected link to /library */}
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </main>
         <MadeWithDyad />
         <Navbar /> {/* Add Navbar here */}
@@ -41,11 +41,11 @@ const ActivityDetail = () => {
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
         <div className="flex items-center mb-8">
-          <Link to={`/categories/${activity.categoryId}`}>
-            <Button variant="ghost" size="icon" className="mr-3 text-brand-primary hover:bg-brand-light rounded-full">
+          <Button asChild variant="ghost" size="icon" className="mr-3 text-brand-primary hover:bg-brand-light rounded-full">
+            <Link to={`/categories/${activity.categoryId}`}>
               <ArrowLeft className="h-6 w-6" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
           <h2 className="text-4xl font-extrabold text-brand-text drop-shadow-sm">{activity.title}</h2>
         </div>
         <p className="text-lg text-muted-foreground mb-6">{activity.description}</p>

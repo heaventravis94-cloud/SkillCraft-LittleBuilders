@@ -18,18 +18,20 @@ const Navbar = () => {
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50">
       <div className="container mx-auto flex justify-around items-center h-16">
         {navItems.map((item) => (
-          <Link to={item.path} key={item.name} className="flex-1">
-            <Button
-              variant="ghost"
-              className={cn(
-                "w-full h-full flex flex-col items-center justify-center text-muted-foreground",
-                location.pathname === item.path && "text-brand-primary font-bold"
-              )}
-            >
+          <Button
+            key={item.name}
+            asChild // Use asChild to pass props to the Link component
+            variant="ghost"
+            className={cn(
+              "w-full h-full flex flex-col items-center justify-center text-muted-foreground",
+              location.pathname === item.path && "text-brand-primary font-bold"
+            )}
+          >
+            <Link to={item.path} className="flex flex-col items-center justify-center">
               <item.icon className="h-6 w-6 mb-1" />
               <span className="text-xs">{item.name}</span>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         ))}
       </div>
     </nav>

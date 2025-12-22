@@ -16,9 +16,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({ activity }) => {
       </CardHeader>
       <CardContent className="flex flex-col justify-between flex-grow">
         <p className="text-base text-muted-foreground mb-4">{activity.description}</p>
-        <Link to={`/activities/${activity.id}`}>
-          <Button className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold rounded-lg">Start Activity</Button>
-        </Link>
+        <Button asChild className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-semibold rounded-lg">
+          <Link to={`/activities/${activity.id}`}>Start Activity</Link>
+        </Button>
       </CardContent>
     </Card>
   );
