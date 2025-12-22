@@ -1046,7 +1046,7 @@ export const activities: Activity[] = [
 
   // Learning & Responsibility (10 activities)
   {
-    id: "set-table",
+    id: "set-table-formal",
     categoryId: "learning-responsibility",
     title: "Set the Table (Formal)",
     description: "Practice setting the table for a more formal meal.",
@@ -1063,7 +1063,7 @@ export const activities: Activity[] = [
     ],
   },
   {
-    id: "follow-directions",
+    id: "follow-directions-multi",
     categoryId: "learning-responsibility",
     title: "Following Multi-Step Directions",
     description: "Practice listening and following instructions carefully.",

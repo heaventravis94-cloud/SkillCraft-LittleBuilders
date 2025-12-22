@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import ActivityCard from "@/components/ActivityCard";
+import Navbar from "@/components/Navbar"; // Import Navbar
 import { getCategoryById, getActivitiesByCategoryId } from "@/data/skills";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -14,7 +15,7 @@ const CategoryDetail = () => {
 
   if (!category) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
         <Header />
         <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
           <h2 className="text-2xl font-bold text-brand-text mb-4">Category Not Found</h2>
@@ -25,16 +26,17 @@ const CategoryDetail = () => {
           </Link>
         </main>
         <MadeWithDyad />
+        <Navbar /> {/* Add Navbar here */}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
         <div className="flex items-center mb-8">
-          <Link to="/">
+          <Link to="/library"> {/* Changed link to /library */}
             <Button variant="ghost" size="icon" className="mr-3 text-brand-primary hover:bg-brand-light rounded-full">
               <ArrowLeft className="h-6 w-6" />
             </Button>
@@ -54,6 +56,7 @@ const CategoryDetail = () => {
         )}
       </main>
       <MadeWithDyad />
+      <Navbar /> {/* Add Navbar here */}
     </div>
   );
 };

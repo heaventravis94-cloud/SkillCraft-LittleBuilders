@@ -2,11 +2,12 @@ import React from "react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
 import CategoryCard from "@/components/CategoryCard";
+import Navbar from "@/components/Navbar"; // Import Navbar
 import { categories } from "@/data/skills";
 
 const SkillLibrary = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
         <h2 className="text-4xl font-extrabold text-center mb-10 text-brand-text drop-shadow-md">
@@ -19,6 +20,7 @@ const SkillLibrary = () => {
         </div>
       </main>
       <MadeWithDyad />
+      <Navbar /> {/* Add Navbar here */}
     </div>
   );
 };
