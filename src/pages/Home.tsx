@@ -5,7 +5,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
+    <div className="min-h-screen flex flex-col pb-16"> {/* Removed bg-gradient-to-br from-brand-light to-background */}
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
         <h2 className="text-4xl font-extrabold text-brand-text drop-shadow-md mb-6">

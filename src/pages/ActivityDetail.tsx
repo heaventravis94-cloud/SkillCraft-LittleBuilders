@@ -60,7 +60,7 @@ const ActivityDetail = () => {
 
   if (!activity) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16">
+      <div className="min-h-screen flex flex-col pb-16"> {/* Removed bg-gradient-to-br from-brand-light to-background */}
         <Header />
         <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
           <h2 className="text-2xl font-bold text-brand-text mb-4">Activity Not Found</h2>
@@ -77,7 +77,7 @@ const ActivityDetail = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16">
+    <div className="min-h-screen flex flex-col pb-16"> {/* Removed bg-gradient-to-br from-brand-light to-background */}
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
         <div className="flex items-center mb-8">

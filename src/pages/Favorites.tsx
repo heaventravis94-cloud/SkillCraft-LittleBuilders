@@ -6,7 +6,7 @@ import { Heart } from "lucide-react";
 
 const Favorites = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
+    <div className="min-h-screen flex flex-col pb-16"> {/* Removed bg-gradient-to-br from-brand-light to-background */}
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
         <Heart className="h-16 w-16 text-brand-accent mx-auto mb-6" />
