@@ -128,6 +128,10 @@
   body {
     @apply bg-background text-foreground;
     font-size: 16px; /* Slightly larger base font size */
+    background-image: url('/SCLB_Background.png'); /* Set the background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    background-position: center; /* Center the background image */
   }
 
   h1, h2, h3, h4, h5, h6 {
