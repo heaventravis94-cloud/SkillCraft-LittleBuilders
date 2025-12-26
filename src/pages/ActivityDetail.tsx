@@ -1,43 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import ActivityStep from "@/components/ActivityStep";
-import Navbar from "@/components/Navbar"; // Import Navbar
+import Navbar from "@/components/Navbar";
 import { getActivityById } from "@/data/skills";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { showSuccess } from "@/utils/toast"; // Import toast utility
+import { showSuccess } from "@/utils/toast";
 
 const ActivityDetail = () => {
   const { activityId } = useParams<{ activityId: string }>();
   const activity = activityId ? getActivityById(activityId) : undefined;
 
-  const handleMarkComplete = () => {
-    showSuccess(`Great job! You completed "${activity?.title}"!`);
-    // In a real app, you would save this completion status to local storage or a backend.
+  // State to track completion of each step
+  const [completedSteps, setCompletedSteps] = useState<Record<number, boolean>>({});
+  const [isActivityComplete, setIsActivityComplete] = useState(false);
+
+  // Load completion state from localStorage on component mount
+  useEffect(() => {
+    if (activity) {
+      const savedProgress = localStorage.getItem(`activity-${activity.id}-progress`);
+      if (savedProgress) {
+        setCompletedSteps(JSON.parse(savedProgress));
+      } else {
+        // Initialize all steps as incomplete if no saved progress
+        const initialSteps: Record<number, boolean> = {};
+        activity.steps.forEach(step => {
+          initialSteps[step.stepNumber] = false;
+        });
+        setCompletedSteps(initialSteps);
+      }
+    }
+  }, [activity]);
+
+  // Update localStorage and check if all steps are complete whenever completedSteps changes
+  useEffect(() => {
+    if (activity) {
+      localStorage.setItem(`activity-${activity.id}-progress`, JSON.stringify(completedSteps));
+      const allStepsChecked = activity.steps.every(step => completedSteps[step.stepNumber]);
+      setIsActivityComplete(allStepsChecked);
+    }
+  }, [completedSteps, activity]);
+
+  const handleToggleStepComplete = (stepNumber: number, isComplete: boolean) => {
+    setCompletedSteps(prev => ({
+      ...prev,
+      [stepNumber]: isComplete,
+    }));
+  };
+
+  const handleMarkActivityComplete = () => {
+    if (activity && isActivityComplete) {
+      showSuccess(`Fantastic! You've mastered "${activity.title}"!`);
+      // In a real app, you might also mark the entire activity as complete in a global state or backend.
+      // For now, we'll just show a toast and keep the step progress.
+    }
   };
 
   if (!activity) {
     return (
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16">
         <Header />
         <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8 text-center">
           <h2 className="text-2xl font-bold text-brand-text mb-4">Activity Not Found</h2>
           <Button asChild variant="outline" className="bg-brand-primary text-white hover:bg-brand-primary/90 rounded-lg">
-            <Link to="/library"> {/* Corrected link to /library */}
+            <Link to="/library">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Categories
             </Link>
           </Button>
         </main>
         <MadeWithDyad />
-        <Navbar /> {/* Add Navbar here */}
+        <Navbar />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16"> {/* Added pb-16 for Navbar */}
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-brand-light to-background pb-16">
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
         <div className="flex items-center mb-8">
@@ -79,21 +119,31 @@ const ActivityDetail = () => {
         <h3 className="text-3xl font-bold text-brand-text mb-6 drop-shadow-sm">Steps to Complete</h3>
         <div className="space-y-6">
           {activity.steps.map((step) => (
-            <ActivityStep key={step.stepNumber} step={step} />
+            <ActivityStep
+              key={step.stepNumber}
+              step={step}
+              isComplete={completedSteps[step.stepNumber] || false}
+              onToggleComplete={handleToggleStepComplete}
+            />
           ))}
         </div>
 
         <div className="mt-10 text-center">
           <Button
-            onClick={handleMarkComplete}
-            className="bg-brand-accent hover:bg-brand-accent/90 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+            onClick={handleMarkActivityComplete}
+            disabled={!isActivityComplete}
+            className={`font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 ease-in-out transform ${
+              isActivityComplete
+                ? "bg-brand-accent hover:bg-brand-accent/90 text-white hover:scale-105"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
           >
             <CheckCircle className="mr-3 h-6 w-6" /> Mark Activity Complete!
           </Button>
         </div>
       </main>
       <MadeWithDyad />
-      <Navbar /> {/* Add Navbar here */}
+      <Navbar />
     </div>
   );
 };

@@ -9,6 +9,52 @@ import {
   FlaskConical,
   Feather,
   LucideIcon,
+  Sun, // New icon for weather
+  Cloud, // New icon for weather
+  Lightbulb, // New icon for inventions
+  Puzzle, // New icon for puzzles
+  Paintbrush, // New icon for art
+  Scissors, // New icon for crafts
+  Cookie, // New icon for baking
+  Flower, // New icon for gardening
+  Star, // New icon for achievements
+  Globe, // New icon for geography
+  Microscope, // New icon for science
+  Rocket, // New icon for space
+  Music, // New icon for music
+  Camera, // New icon for photography
+  Compass, // New icon for exploration
+  Tent, // New icon for camping
+  Sparkles, // New icon for magic
+  Crown, // New icon for royalty
+  Castle, // New icon for fantasy
+  Dragon, // New icon for fantasy
+  Robot, // New icon for robotics
+  Code, // New icon for coding
+  Gamepad, // New icon for gaming
+  Brush, // New icon for painting
+  PenTool, // New icon for drawing
+  Gift, // New icon for gift-giving
+  MessageSquare, // New icon for communication
+  Shield, // New icon for safety
+  Map, // New icon for maps
+  Binoculars, // New icon for observation
+  Anchor, // New icon for nautical
+  Ship, // New icon for nautical
+  Fish, // New icon for fishing
+  Bug, // New icon for insects
+  TreeDeciduous, // New icon for trees
+  Mountain, // New icon for outdoors
+  Snowflake, // New icon for winter
+  Flame, // New icon for fire safety
+  Droplet, // New icon for water
+  Wind, // New icon for wind
+  Zap, // New icon for electricity
+  Atom, // New icon for atoms
+  Dna, // New icon for DNA
+  Brain, // New icon for thinking
+  Speech, // New icon for speaking
+  FeatherIcon, // Renamed Feather to FeatherIcon to avoid conflict with Feather from lucide-react
 } from "lucide-react";
 
 export type SkillLevel = "Beginner" | "Intermediate" | "Advanced";
@@ -95,7 +141,7 @@ export const categories: Category[] = [
 ];
 
 export const activities: Activity[] = [
-  // Everyday Life Skills (15 activities)
+  // Everyday Life Skills (15 activities + 6 new = 21 total)
   {
     id: "make-bed",
     categoryId: "everyday-life",
@@ -342,8 +388,107 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Wash your hands after handling trash." },
     ],
   },
+  {
+    id: "organize-shoes",
+    categoryId: "everyday-life",
+    title: "Organize Your Shoes",
+    description: "Keep your shoes tidy and in their proper place.",
+    skillLevel: "Beginner",
+    estimatedTime: "5-10 minutes",
+    supplies: ["Shoe rack or designated shoe area"],
+    steps: [
+      { stepNumber: 1, description: "Gather all your shoes from around the house." },
+      { stepNumber: 2, description: "Pair up matching shoes." },
+      { stepNumber: 3, description: "Clean any mud or dirt off your shoes (if needed)." },
+      { stepNumber: 4, description: "Place shoes neatly on a shoe rack or in their designated spot." },
+      { stepNumber: 5, description: "Ensure pathways are clear of shoes." },
+    ],
+  },
+  {
+    id: "hang-up-coat",
+    categoryId: "everyday-life",
+    title: "Hang Up Your Coat",
+    description: "Practice hanging up your coat or jacket after coming inside.",
+    skillLevel: "Beginner",
+    estimatedTime: "2 minutes",
+    supplies: ["Coat/jacket", "Coat hook or hanger"],
+    steps: [
+      { stepNumber: 1, description: "Take off your coat or jacket." },
+      { stepNumber: 2, description: "Find your designated coat hook or a hanger." },
+      { stepNumber: 3, description: "Hang your coat neatly so it doesn't fall off." },
+      { stepNumber: 4, description: "Close any zippers or buttons to keep it tidy." },
+      { stepNumber: 5, description: "Make sure it's not touching the floor." },
+    ],
+  },
+  {
+    id: "brush-teeth",
+    categoryId: "everyday-life",
+    title: "Brush Your Teeth Properly",
+    description: "Learn the correct way to brush your teeth for a healthy smile.",
+    skillLevel: "Beginner",
+    estimatedTime: "3-5 minutes",
+    supplies: ["Toothbrush", "Toothpaste", "Water", "Timer (optional)"],
+    steps: [
+      { stepNumber: 1, description: "Wet your toothbrush and put a pea-sized amount of toothpaste on it." },
+      { stepNumber: 2, description: "Brush your outer teeth surfaces with small, gentle circles." },
+      { stepNumber: 3, description: "Brush your inner teeth surfaces, tilting the brush." },
+      { stepNumber: 4, description: "Brush the chewing surfaces of your teeth." },
+      { stepNumber: 5, description: "Gently brush your tongue to remove bacteria." },
+      { stepNumber: 6, description: "Rinse your mouth with water and spit. Rinse your toothbrush." },
+    ],
+  },
+  {
+    id: "wash-hands",
+    categoryId: "everyday-life",
+    title: "Wash Your Hands Thoroughly",
+    description: "Master the steps for clean hands to stay healthy.",
+    skillLevel: "Beginner",
+    estimatedTime: "2 minutes",
+    supplies: ["Soap", "Water", "Towel"],
+    steps: [
+      { stepNumber: 1, description: "Wet your hands with clean, running water (warm or cold)." },
+      { stepNumber: 2, description: "Apply soap and lather by rubbing your hands together." },
+      { stepNumber: 3, description: "Scrub all surfaces: palms, back of hands, between fingers, and under nails." },
+      { stepNumber: 4, description: "Continue scrubbing for at least 20 seconds (sing 'Happy Birthday' twice!)." },
+      { stepNumber: 5, description: "Rinse your hands well under clean, running water." },
+      { stepNumber: 6, description: "Dry your hands using a clean towel or air dryer." },
+    ],
+  },
+  {
+    id: "get-dressed",
+    categoryId: "everyday-life",
+    title: "Get Dressed Independently",
+    description: "Practice choosing and putting on your clothes by yourself.",
+    skillLevel: "Beginner",
+    estimatedTime: "10-15 minutes",
+    supplies: ["Clean clothes"],
+    steps: [
+      { stepNumber: 1, description: "Choose your outfit for the day (shirt, pants, underwear, socks)." },
+      { stepNumber: 2, description: "Put on your underwear and socks first." },
+      { stepNumber: 3, description: "Put on your shirt, making sure it's facing the right way." },
+      { stepNumber: 4, description: "Put on your pants or skirt." },
+      { stepNumber: 5, description: "Check in a mirror to make sure everything looks good!" },
+    ],
+  },
+  {
+    id: "pack-lunch",
+    categoryId: "everyday-life",
+    title: "Pack Your Own Lunch",
+    description: "Help prepare and pack a healthy lunch for school or an outing.",
+    skillLevel: "Intermediate",
+    estimatedTime: "15-20 minutes",
+    supplies: ["Lunchbox", "Sandwich/main item", "Fruit", "Vegetables", "Snack", "Drink"],
+    safetyNotes: "Ask an adult for help with cutting or hot items.",
+    steps: [
+      { stepNumber: 1, description: "Choose a main item for your lunch (e.g., sandwich, leftovers)." },
+      { stepNumber: 2, description: "Select a fruit (apple, banana, grapes) and a vegetable (carrot sticks, cucumber slices)." },
+      { stepNumber: 3, description: "Add a healthy snack (yogurt, cheese stick, crackers)." },
+      { stepNumber: 4, description: "Include a drink (water bottle, juice box)." },
+      { stepNumber: 5, description: "Pack everything neatly into your lunchbox, ensuring cold items are kept cool." },
+    ],
+  },
 
-  // Kitchen & Food Basics (15 activities)
+  // Kitchen & Food Basics (15 activities + 6 new = 21 total)
   {
     id: "fruit-skewer",
     categoryId: "kitchen-basics",
@@ -425,6 +570,7 @@ export const activities: Activity[] = [
       { stepNumber: 2, description: "Ask an adult to help you add all ingredients to the blender." },
       { stepNumber: 3, description: "Secure the lid and ask an adult to blend until smooth." },
       { stepNumber: 4, description: "Pour into a glass and enjoy your delicious smoothie!" },
+      { stepNumber: 5, description: "Clean the blender right away." },
     ],
   },
   {
@@ -616,8 +762,107 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Mix well. Taste and add more lime or salt if needed. Serve with tortilla chips!" },
     ],
   },
+  {
+    id: "make-oatmeal",
+    categoryId: "kitchen-basics",
+    title: "Cook Instant Oatmeal",
+    description: "Prepare a warm and healthy bowl of oatmeal.",
+    skillLevel: "Beginner",
+    estimatedTime: "5-10 minutes",
+    supplies: ["Instant oatmeal packet", "Water or milk", "Microwave-safe bowl", "Spoon", "Microwave (adult supervision)"],
+    safetyNotes: "Adult supervision for using the microwave and handling hot bowls.",
+    steps: [
+      { stepNumber: 1, description: "Empty one packet of instant oatmeal into a microwave-safe bowl." },
+      { stepNumber: 2, description: "Add water or milk according to package directions (usually 1/2 cup)." },
+      { stepNumber: 3, description: "Stir well. Ask an adult to microwave for 1-2 minutes, or until cooked." },
+      { stepNumber: 4, description: "Carefully remove the hot bowl (use oven mitts if needed)." },
+      { stepNumber: 5, description: "Stir again and let cool slightly. Add toppings like fruit or honey if desired." },
+    ],
+  },
+  {
+    id: "peel-banana",
+    categoryId: "kitchen-basics",
+    title: "Peel a Banana",
+    description: "Learn to peel a banana neatly and safely.",
+    skillLevel: "Beginner",
+    estimatedTime: "1 minute",
+    supplies: ["Banana"],
+    steps: [
+      { stepNumber: 1, description: "Hold the banana firmly." },
+      { stepNumber: 2, description: "Pinch or gently break the stem end of the banana." },
+      { stepNumber: 3, description: "Pull the peel down in strips." },
+      { stepNumber: 4, description: "Continue pulling until the banana is fully peeled." },
+      { stepNumber: 5, description: "Dispose of the peel in the trash or compost." },
+    ],
+  },
+  {
+    id: "spread-butter",
+    categoryId: "kitchen-basics",
+    title: "Spread Butter on Bread",
+    description: "Practice spreading butter or jam evenly on bread.",
+    skillLevel: "Beginner",
+    estimatedTime: "3 minutes",
+    supplies: ["Slice of bread", "Butter or jam", "Butter knife", "Plate"],
+    safetyNotes: "Be careful with the butter knife, always spread away from your body.",
+    steps: [
+      { stepNumber: 1, description: "Place a slice of bread on a plate." },
+      { stepNumber: 2, description: "Scoop a small amount of butter or jam onto your butter knife." },
+      { stepNumber: 3, description: "Gently spread the butter/jam from the center of the bread outwards." },
+      { stepNumber: 4, description: "Ensure an even layer across the entire slice." },
+      { stepNumber: 5, description: "Enjoy your buttered bread!" },
+    ],
+  },
+  {
+    id: "make-hot-chocolate",
+    categoryId: "kitchen-basics",
+    title: "Make Hot Chocolate",
+    description: "Prepare a warm and cozy cup of hot chocolate.",
+    skillLevel: "Beginner",
+    estimatedTime: "5-10 minutes",
+    supplies: ["Hot chocolate mix", "Milk or water", "Mug", "Spoon", "Microwave or stovetop (adult supervision)"],
+    safetyNotes: "Adult supervision for heating liquids and handling hot mugs.",
+    steps: [
+      { stepNumber: 1, description: "Pour hot chocolate mix into a mug." },
+      { stepNumber: 2, description: "Add milk or water according to package directions." },
+      { stepNumber: 3, description: "Ask an adult to heat the mug in the microwave or on the stovetop until hot." },
+      { stepNumber: 4, description: "Carefully stir until the mix is fully dissolved." },
+      { stepNumber: 5, description: "Let cool slightly before drinking. Add marshmallows if you like!" },
+    ],
+  },
+  {
+    id: "wash-fruit",
+    categoryId: "kitchen-basics",
+    title: "Wash Fruits and Vegetables",
+    description: "Learn how to properly wash produce before eating.",
+    skillLevel: "Beginner",
+    estimatedTime: "5 minutes",
+    supplies: ["Fruits/vegetables", "Colander", "Running water"],
+    steps: [
+      { stepNumber: 1, description: "Place fruits or vegetables in a colander." },
+      { stepNumber: 2, description: "Rinse them thoroughly under cool, running water." },
+      { stepNumber: 3, description: "Gently rub the surface of the produce to remove dirt." },
+      { stepNumber: 4, description: "For items like berries, rinse gently and pat dry." },
+      { stepNumber: 5, description: "Enjoy your clean and healthy snacks!" },
+    ],
+  },
+  {
+    id: "make-ice-cubes",
+    categoryId: "kitchen-basics",
+    title: "Make Ice Cubes",
+    description: "Learn how to fill an ice cube tray and make ice.",
+    skillLevel: "Beginner",
+    estimatedTime: "2 minutes",
+    supplies: ["Ice cube tray", "Water", "Freezer"],
+    steps: [
+      { stepNumber: 1, description: "Take an empty ice cube tray." },
+      { stepNumber: 2, description: "Carefully fill each compartment with water, but not to the very top." },
+      { stepNumber: 3, description: "Slowly carry the tray to the freezer." },
+      { stepNumber: 4, description: "Place it flat in the freezer so the water doesn't spill." },
+      { stepNumber: 5, description: "Wait a few hours for the water to freeze into ice cubes!" },
+    ],
+  },
 
-  // Creativity & Crafts (15 activities)
+  // Creativity & Crafts (15 activities + 6 new = 21 total)
   {
     id: "paper-airplane",
     categoryId: "creativity-crafts",
@@ -875,8 +1120,82 @@ export const activities: Activity[] = [
       { stepNumber: 6, description: "Fluff out the fringes to make your flower look full. You can add a green paper stem if desired." },
     ],
   },
+  {
+    id: "make-origami-boat",
+    categoryId: "creativity-crafts",
+    title: "Fold an Origami Boat",
+    description: "Create a paper boat that can float on water.",
+    skillLevel: "Beginner",
+    estimatedTime: "15-20 minutes",
+    supplies: ["Rectangular piece of paper"],
+    steps: [
+      { stepNumber: 1, description: "Start with a rectangular piece of paper, fold it in half lengthwise." },
+      { stepNumber: 2, description: "Fold it in half again widthwise, then unfold the last fold." },
+      { stepNumber: 3, description: "Fold the top two corners down to meet the center crease." },
+      { stepNumber: 4, description: "Fold the bottom flaps up on both sides." },
+      { stepNumber: 5, description: "Tuck the corners in to secure the flaps." },
+      { stepNumber: 6, description: "Open the bottom of the hat shape and flatten it into a square." },
+      { stepNumber: 7, description: "Fold the bottom corners of the square up to the top point on both sides." },
+      { stepNumber: 8, description: "Open the bottom again and flatten into a smaller square." },
+      { stepNumber: 9, description: "Gently pull the two top corners outwards to form the boat shape. Flatten the bottom." },
+      { stepNumber: 10, description: "Test your boat in water!" },
+    ],
+  },
+  {
+    id: "diy-stamps",
+    categoryId: "creativity-crafts",
+    title: "DIY Potato Stamps",
+    description: "Carve simple designs into potatoes to make your own stamps.",
+    skillLevel: "Intermediate",
+    estimatedTime: "45-60 minutes",
+    supplies: ["Potatoes", "Kid-safe carving tools or plastic knives", "Paper", "Washable paint or ink pads", "Paper towels"],
+    safetyNotes: "Adult supervision for carving. Be careful with carving tools.",
+    steps: [
+      { stepNumber: 1, description: "Ask an adult to cut a potato in half." },
+      { stepNumber: 2, description: "Draw a simple design (star, heart, circle) onto the cut surface of the potato with a pencil." },
+      { stepNumber: 3, description: "Carefully carve away the potato around your design, leaving the design raised (adult help needed)." },
+      { stepNumber: 4, description: "Pat the potato stamp dry with a paper towel." },
+      { stepNumber: 5, description: "Dip your stamp into washable paint or press onto an ink pad." },
+      { stepNumber: 6, description: "Press your stamp onto paper to create patterns or pictures!" },
+    ],
+  },
+  {
+    id: "yarn-pom-pom",
+    categoryId: "creativity-crafts",
+    title: "Fluffy Yarn Pom-Poms",
+    description: "Make soft, colorful pom-poms from yarn.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Yarn (any color)", "Scissors", "Cardboard (for templates) or pom-pom maker"],
+    safetyNotes: "Adult supervision for scissors.",
+    steps: [
+      { stepNumber: 1, description: "Cut two identical donut shapes from cardboard (or use a pom-pom maker)." },
+      { stepNumber: 2, description: "Hold the two cardboard donuts together. Start wrapping yarn around both rings, through the center hole." },
+      { stepNumber: 3, description: "Keep wrapping tightly until the center hole is almost completely filled." },
+      { stepNumber: 4, description: "Carefully cut the yarn along the outer edge, between the two cardboard rings." },
+      { stepNumber: 5, description: "Take a separate piece of yarn, thread it between the cardboard rings, and tie a tight double knot around the center." },
+      { stepNumber: 6, description: "Remove the cardboard rings. Fluff up your pom-pom and trim any uneven edges." },
+    ],
+  },
+  {
+    id: "masking-tape-art",
+    categoryId: "creativity-crafts",
+    title: "Masking Tape Resist Art",
+    description: "Create geometric art using masking tape and paint.",
+    skillLevel: "Beginner",
+    estimatedTime: "45-60 minutes",
+    supplies: ["Paper", "Masking tape", "Acrylic or tempera paints", "Paintbrushes", "Newspaper/tablecloth"],
+    steps: [
+      { stepNumber: 1, description: "Cover your work surface with newspaper." },
+      { stepNumber: 2, description: "Stick strips of masking tape onto your paper to create a design (e.g., criss-cross, squares, triangles)." },
+      { stepNumber: 3, description: "Press the tape down firmly to ensure no paint seeps underneath." },
+      { stepNumber: 4, description: "Paint over the entire paper, including the tape, using different colors." },
+      { stepNumber: 5, description: "Let the paint dry completely." },
+      { stepNumber: 6, description: "Carefully peel off the masking tape to reveal your unpainted design underneath!" },
+    ],
+  },
 
-  // Nature & Care Skills (10 activities)
+  // Nature & Care Skills (10 activities + 6 new = 16 total)
   {
     id: "plant-seed",
     categoryId: "nature-care",
@@ -1043,8 +1362,95 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Enjoy the peacefulness of nature and let your imagination soar!" },
     ],
   },
+  {
+    id: "leaf-collection",
+    categoryId: "nature-care",
+    title: "Leaf Collection & Identification",
+    description: "Collect different leaves and learn to identify them.",
+    skillLevel: "Beginner",
+    estimatedTime: "45-60 minutes",
+    supplies: ["Basket or bag", "Notebook", "Pencil", "Leaf identification guide (book or app)"],
+    safetyNotes: "Always go with an adult. Do not pick leaves from private property without permission.",
+    steps: [
+      { stepNumber: 1, description: "Go on a nature walk with an adult." },
+      { stepNumber: 2, description: "Collect fallen leaves of different shapes, sizes, and colors." },
+      { stepNumber: 3, description: "Bring your collected leaves home." },
+      { stepNumber: 4, description: "Use a leaf identification guide to try and name each leaf." },
+      { stepNumber: 5, description: "Press your favorite leaves in a heavy book to preserve them." },
+      { stepNumber: 6, description: "Create a leaf collage or display your collection." },
+    ],
+  },
+  {
+    id: "build-bug-hotel",
+    categoryId: "nature-care",
+    title: "Build a Simple Bug Hotel",
+    description: "Create a cozy home for garden insects.",
+    skillLevel: "Intermediate",
+    estimatedTime: "1-2 hours",
+    supplies: ["Small wooden box or plastic bottle (cut)", "Hollow stems (bamboo, old plant stalks)", "Pinecones", "Straw", "Leaves", "Twine/string", "Scissors (adult use)"],
+    safetyNotes: "Adult supervision for cutting materials. Be gentle with insects.",
+    steps: [
+      { stepNumber: 1, description: "Find a small wooden box or cut a plastic bottle to create a frame." },
+      { stepNumber: 2, description: "Gather natural materials like hollow stems, pinecones, straw, and dry leaves." },
+      { stepNumber: 3, description: "Arrange and pack these materials tightly into your frame, creating different compartments." },
+      { stepNumber: 4, description: "Use twine to secure any loose materials." },
+      { stepNumber: 5, description: "Place your bug hotel in a sheltered spot in the garden, near plants." },
+      { stepNumber: 6, description: "Observe which insects come to visit their new home!" },
+    ],
+  },
+  {
+    id: "grow-herbs",
+    categoryId: "nature-care",
+    title: "Grow Your Own Herbs",
+    description: "Plant and care for easy-to-grow herbs like mint or basil.",
+    skillLevel: "Beginner",
+    estimatedTime: "30 minutes + ongoing care",
+    supplies: ["Small pots", "Potting soil", "Herb seeds or small herb plants", "Watering can", "Sunny windowsill"],
+    steps: [
+      { stepNumber: 1, description: "Choose small pots with drainage holes and fill them with potting soil." },
+      { stepNumber: 2, description: "Plant herb seeds according to package directions, or transplant small herb plants." },
+      { stepNumber: 3, description: "Water gently until the soil is damp." },
+      { stepNumber: 4, description: "Place your herb pots on a sunny windowsill or outdoor spot." },
+      { stepNumber: 5, description: "Water regularly and watch your herbs grow! You can use them in cooking." },
+    ],
+  },
+  {
+    id: "identify-birds",
+    categoryId: "nature-care",
+    title: "Backyard Bird Watching",
+    description: "Learn to identify common birds in your backyard.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-60 minutes",
+    supplies: ["Binoculars (optional)", "Bird identification guide (book or app)", "Notebook and pencil"],
+    steps: [
+      { stepNumber: 1, description: "Find a quiet spot in your backyard or near a window." },
+      { stepNumber: 2, description: "Sit quietly and observe the birds that visit." },
+      { stepNumber: 3, description: "Use a bird identification guide to try and name the birds you see." },
+      { stepNumber: 4, description: "Note their colors, size, beak shape, and what they are doing." },
+      { stepNumber: 5, description: "Keep a log of the different birds you spot over time." },
+    ],
+  },
+  {
+    id: "make-sun-print",
+    categoryId: "nature-care",
+    title: "DIY Sun Print Art",
+    description: "Create beautiful art using sunlight and natural objects.",
+    skillLevel: "Intermediate",
+    estimatedTime: "30 minutes + sun exposure time",
+    supplies: ["Sun print paper (cyanotype paper)", "Natural objects (leaves, flowers, feathers)", "Cardboard", "Water", "Tray"],
+    safetyNotes: "Adult supervision for handling chemicals if making your own cyanotype paper.",
+    steps: [
+      { stepNumber: 1, description: "Gather natural objects like leaves, flowers, or feathers." },
+      { stepNumber: 2, description: "In a shaded area, place a piece of sun print paper (blue side up) on a piece of cardboard." },
+      { stepNumber: 3, description: "Arrange your natural objects on top of the paper." },
+      { stepNumber: 4, description: "Carefully move the paper and objects into direct sunlight for 2-5 minutes (or as directed by paper instructions)." },
+      { stepNumber: 5, description: "Bring the paper back into the shade. Remove the objects." },
+      { stepNumber: 6, description: "Rinse the paper in a tray of water for about 1 minute. Watch the colors develop!" },
+      { stepNumber: 7, description: "Lay flat to dry. You've made a beautiful sun print!" },
+    ],
+  },
 
-  // Learning & Responsibility (10 activities)
+  // Learning & Responsibility (10 activities + 6 new = 16 total)
   {
     id: "set-table-formal",
     categoryId: "learning-responsibility",
@@ -1206,8 +1612,107 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Discuss with an adult how using a calendar helps you stay organized." },
     ],
   },
+  {
+    id: "tell-time",
+    categoryId: "learning-responsibility",
+    title: "Learn to Tell Time",
+    description: "Practice reading analog and digital clocks.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Analog clock (toy or real)", "Digital clock", "Paper", "Pencil"],
+    steps: [
+      { stepNumber: 1, description: "Identify the hour hand and minute hand on an analog clock." },
+      { stepNumber: 2, description: "Practice telling time to the hour (e.g., 3 o'clock)." },
+      { stepNumber: 3, description: "Practice telling time to the half-hour (e.g., half past 3)." },
+      { stepNumber: 4, description: "Practice telling time to the quarter-hour (e.g., quarter past 3, quarter to 4)." },
+      { stepNumber: 5, description: "Read time on a digital clock and compare it to an analog clock." },
+      { stepNumber: 6, description: "Ask an adult to quiz you on different times throughout the day." },
+    ],
+  },
+  {
+    id: "address-envelope",
+    categoryId: "learning-responsibility",
+    title: "Address an Envelope",
+    description: "Learn how to correctly address an envelope for mailing.",
+    skillLevel: "Beginner",
+    estimatedTime: "10-15 minutes",
+    supplies: ["Envelope", "Pen", "Address of recipient", "Return address"],
+    steps: [
+      { stepNumber: 1, description: "Get an envelope and a pen." },
+      { stepNumber: 2, description: "Write the recipient's name and address clearly in the center of the envelope." },
+      { stepNumber: 3, description: "Write your own name and address (return address) in the top left corner." },
+      { stepNumber: 4, description: "Draw a small square in the top right corner where a stamp would go." },
+      { stepNumber: 5, description: "Practice writing different addresses." },
+    ],
+  },
+  {
+    id: "make-choices",
+    categoryId: "learning-responsibility",
+    title: "Making Good Choices",
+    description: "Practice thinking through decisions and their consequences.",
+    skillLevel: "Beginner",
+    estimatedTime: "20-30 minutes",
+    supplies: ["Scenario cards (e.g., 'You found a toy on the playground')", "Paper", "Pencil"],
+    steps: [
+      { stepNumber: 1, description: "Think of a simple scenario where you need to make a choice (e.g., 'You found a toy on the playground')." },
+      { stepNumber: 2, description: "Identify the different choices you could make (e.g., 'Keep it', 'Look for the owner', 'Tell an adult')." },
+      { stepNumber: 3, description: "Think about what might happen for each choice (the consequences)." },
+      { stepNumber: 4, description: "Decide which choice is the best and why." },
+      { stepNumber: 5, description: "Discuss your choices and reasoning with an adult." },
+    ],
+  },
+  {
+    id: "organize-school-supplies",
+    categoryId: "learning-responsibility",
+    title: "Organize School Supplies",
+    description: "Keep your school supplies neat and ready for learning.",
+    skillLevel: "Beginner",
+    estimatedTime: "15-20 minutes",
+    supplies: ["Pencil case", "Folders", "Notebooks", "Pencils", "Crayons", "Erasers"],
+    steps: [
+      { stepNumber: 1, description: "Gather all your school supplies." },
+      { stepNumber: 2, description: "Sort pencils, pens, and markers into your pencil case." },
+      { stepNumber: 3, description: "Place notebooks and folders neatly on a shelf or in your backpack." },
+      { stepNumber: 4, description: "Sharpen any dull pencils." },
+      { stepNumber: 5, description: "Make sure everything has a designated spot so it's easy to find." },
+    ],
+  },
+  {
+    id: "practice-manners",
+    categoryId: "learning-responsibility",
+    title: "Practice Good Manners",
+    description: "Learn and practice polite words and actions.",
+    skillLevel: "Beginner",
+    estimatedTime: "15-20 minutes",
+    supplies: ["No supplies needed, just practice!"],
+    steps: [
+      { stepNumber: 1, description: "Learn the 'magic words': please, thank you, excuse me, may I." },
+      { stepNumber: 2, description: "Practice using 'please' when you ask for something." },
+      { stepNumber: 3, description: "Practice saying 'thank you' when you receive something or someone helps you." },
+      { stepNumber: 4, description: "Practice saying 'excuse me' when you need to interrupt or pass by someone." },
+      { stepNumber: 5, description: "Practice good table manners, like not talking with your mouth full." },
+      { stepNumber: 6, description: "Remember to always be kind and respectful to others." },
+    ],
+  },
+  {
+    id: "read-map",
+    categoryId: "learning-responsibility",
+    title: "Basic Map Reading",
+    description: "Learn to read a simple map and understand directions.",
+    skillLevel: "Intermediate",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Simple map (e.g., park map, treasure map)", "Toy car or finger", "Paper", "Pencil"],
+    steps: [
+      { stepNumber: 1, description: "Get a simple map. Identify the title and legend (key)." },
+      { stepNumber: 2, description: "Find the compass rose to understand North, South, East, West." },
+      { stepNumber: 3, description: "Locate a starting point and an ending point on the map." },
+      { stepNumber: 4, description: "Trace a path from the start to the end using your finger or a toy car." },
+      { stepNumber: 5, description: "Practice giving directions using words like 'turn left', 'go straight', 'pass the park'." },
+      { stepNumber: 6, description: "Draw your own simple map of your room or backyard." },
+    ],
+  },
 
-  // Jewelry Making (10 activities)
+  // Jewelry Making (10 activities + 5 new = 15 total)
   {
     id: "beaded-bracelet",
     categoryId: "jewelry-making",
@@ -1377,8 +1882,78 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Continue knotting until your keychain is the desired length. Tie a final knot and trim the ends." },
     ],
   },
+  {
+    id: "paper-beads",
+    categoryId: "jewelry-making",
+    title: "Recycled Paper Beads",
+    description: "Turn old paper into colorful beads for jewelry.",
+    skillLevel: "Intermediate",
+    estimatedTime: "1-2 hours (plus drying time)",
+    supplies: ["Old magazines or colored paper", "Ruler", "Pencil", "Scissors", "Glue stick", "Toothpicks or thin dowels", "Clear glaze/Mod Podge (optional)"],
+    safetyNotes: "Adult supervision for scissors.",
+    steps: [
+      { stepNumber: 1, description: "Cut long, thin triangles from old magazines or colored paper (wide at one end, pointy at the other)." },
+      { stepNumber: 2, description: "Starting from the wide end, wrap a paper triangle tightly around a toothpick or thin dowel." },
+      { stepNumber: 3, description: "Apply glue to the pointy end of the triangle and press it down to secure the bead." },
+      { stepNumber: 4, description: "Slide the bead off the toothpick. Repeat to make many beads." },
+      { stepNumber: 5, description: "Let the beads dry completely. For extra shine and durability, ask an adult to apply a clear glaze." },
+      { stepNumber: 6, description: "String your paper beads onto elastic string to make a necklace or bracelet." },
+    ],
+  },
+  {
+    id: "braided-headband",
+    categoryId: "jewelry-making",
+    title: "Braided Fabric Headband",
+    description: "Create a stylish braided headband from fabric scraps.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Fabric scraps (3 different colors/patterns)", "Scissors", "Sewing machine/needle & thread (optional, adult use)", "Fabric glue (optional)"],
+    safetyNotes: "Adult supervision for scissors or sewing.",
+    steps: [
+      { stepNumber: 1, description: "Cut three long strips of fabric, each about 2 inches wide and 20-24 inches long." },
+      { stepNumber: 2, description: "Tie the three strips together in a knot at one end." },
+      { stepNumber: 3, description: "Braid the three fabric strips together tightly." },
+      { stepNumber: 4, description: "Once you reach the end, tie another knot to secure the braid." },
+      { stepNumber: 5, description: "Measure the braid around your head. Trim excess fabric and either sew or glue the ends together to form a loop (adult help)." },
+      { stepNumber: 6, description: "Wear your new braided headband!" },
+    ],
+  },
+  {
+    id: "clay-pendants",
+    categoryId: "jewelry-making",
+    title: "Air Dry Clay Pendants",
+    description: "Sculpt and decorate unique pendants from air-dry clay.",
+    skillLevel: "Intermediate",
+    estimatedTime: "1 hour (plus drying time)",
+    supplies: ["Air dry clay", "Rolling pin", "Cookie cutters or sculpting tools", "Toothpick", "Acrylic paints", "Paintbrushes", "Clear sealant", "Jump rings", "Necklace cord"],
+    steps: [
+      { stepNumber: 1, description: "Roll out air dry clay to about 1/4 inch thickness." },
+      { stepNumber: 2, description: "Use cookie cutters or sculpt freehand to create pendant shapes." },
+      { stepNumber: 3, description: "Use a toothpick to make a small hole at the top of each pendant for hanging." },
+      { stepNumber: 4, description: "Let the clay dry completely (24-72 hours, as per package instructions)." },
+      { stepNumber: 5, description: "Once dry, paint and decorate your pendants. Let paint dry." },
+      { stepNumber: 6, description: "Apply a clear sealant to protect your design. Once dry, attach a jump ring and necklace cord." },
+    ],
+  },
+  {
+    id: "beaded-keychain",
+    categoryId: "jewelry-making",
+    title: "Beaded Keychain",
+    description: "Create a personalized keychain with colorful beads.",
+    skillLevel: "Beginner",
+    estimatedTime: "20-30 minutes",
+    supplies: ["Keychain ring", "Assorted beads", "Jewelry wire or strong string", "Pliers (optional, adult use)"],
+    steps: [
+      { stepNumber: 1, description: "Choose a keychain ring and your favorite beads." },
+      { stepNumber: 2, description: "Cut a piece of jewelry wire or strong string about 8-10 inches long." },
+      { stepNumber: 3, description: "Thread one end of the wire/string through the keychain ring and fold it in half." },
+      { stepNumber: 4, description: "Start threading beads onto both strands of the wire/string, creating a pattern." },
+      { stepNumber: 5, description: "Once you have enough beads, tie a secure knot or use pliers to create a loop to finish (adult help)." },
+      { stepNumber: 6, description: "Attach your new keychain to your backpack or keys!" },
+    ],
+  },
 
-  // Woodworking Basics (10 activities)
+  // Woodworking Basics (10 activities + 5 new = 15 total)
   {
     id: "wooden-coaster",
     categoryId: "woodworking-basics",
@@ -1546,8 +2121,90 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Let the ink dry completely. Ask an adult to spray with a clear sealant for protection." },
     ],
   },
+  {
+    id: "build-popsicle-stick-frame",
+    categoryId: "woodworking-basics",
+    title: "Popsicle Stick Picture Frame",
+    description: "Construct a simple picture frame using popsicle sticks.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Popsicle sticks", "Craft glue", "Cardboard (for backing)", "Photo", "Decorations (paint, glitter)"],
+    steps: [
+      { stepNumber: 1, description: "Arrange 4 popsicle sticks to form a square or rectangle for your frame." },
+      { stepNumber: 2, description: "Glue the corners where the sticks overlap. Let dry." },
+      { stepNumber: 3, description: "Glue another layer of popsicle sticks on top for extra strength and dimension." },
+      { stepNumber: 4, description: "Decorate your frame with paint, glitter, or markers. Let dry." },
+      { stepNumber: 5, description: "Cut a piece of cardboard slightly larger than your photo. Glue your photo to the cardboard." },
+      { stepNumber: 6, description: "Glue the photo/cardboard backing to the back of your popsicle stick frame." },
+    ],
+  },
+  {
+    id: "decorate-wood-beads",
+    categoryId: "woodworking-basics",
+    title: "Decorate Wooden Beads",
+    description: "Paint and personalize wooden beads for crafts or jewelry.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes (plus drying time)",
+    supplies: ["Plain wooden beads", "Acrylic paints", "Small paintbrushes", "Toothpicks (for holding beads)"],
+    steps: [
+      { stepNumber: 1, description: "Choose plain wooden beads of various sizes." },
+      { stepNumber: 2, description: "Insert a toothpick into the hole of a bead to hold it while painting." },
+      { stepNumber: 3, description: "Paint the beads with different colors, patterns, or designs." },
+      { stepNumber: 4, description: "Stick the toothpick into a piece of foam or cardboard to let the beads dry completely." },
+      { stepNumber: 5, description: "Once dry, use your decorated beads for necklaces, keychains, or other craft projects." },
+    ],
+  },
+  {
+    id: "build-mini-raft",
+    categoryId: "woodworking-basics",
+    title: "Build a Mini Raft",
+    description: "Construct a small raft from natural materials that can float.",
+    skillLevel: "Intermediate",
+    estimatedTime: "45-60 minutes",
+    supplies: ["Small sticks or twigs", "Twine or string", "Small leaf (for sail, optional)", "Fabric scrap (for flag, optional)"],
+    steps: [
+      { stepNumber: 1, description: "Gather several small, straight sticks or twigs of similar length." },
+      { stepNumber: 2, description: "Lay them side-by-side. Use twine to tie them together securely at both ends." },
+      { stepNumber: 3, description: "Add a cross-beam stick in the middle and tie it down for extra stability." },
+      { stepNumber: 4, description: "If desired, attach a small stick upright as a mast and glue a leaf or fabric scrap as a sail." },
+      { stepNumber: 5, description: "Test your raft's buoyancy in a sink or shallow puddle!" },
+    ],
+  },
+  {
+    id: "wood-slice-ornament",
+    categoryId: "woodworking-basics",
+    title: "Decorate a Wood Slice Ornament",
+    description: "Personalize a wooden slice to create a festive ornament.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Plain wood slice with a hole", "Acrylic paints", "Paintbrushes", "Permanent markers", "Ribbon or twine"],
+    steps: [
+      { stepNumber: 1, description: "Get a plain wood slice ornament. Make sure it's clean and dry." },
+      { stepNumber: 2, description: "Paint or draw a festive design on one side (e.g., a snowflake, a tree, a star)." },
+      { stepNumber: 3, description: "Let the paint or ink dry completely." },
+      { stepNumber: 4, description: "Thread a piece of ribbon or twine through the hole to create a hanger." },
+      { stepNumber: 5, description: "Hang your custom ornament on a tree or give it as a gift!" },
+    ],
+  },
+  {
+    id: "build-mini-fence",
+    categoryId: "woodworking-basics",
+    title: "Build a Mini Fence",
+    description: "Construct a small decorative fence using craft sticks.",
+    skillLevel: "Beginner",
+    estimatedTime: "45-60 minutes",
+    supplies: ["Craft sticks (popsicle sticks)", "Craft glue", "Scissors (adult use)", "Paint (optional)"],
+    steps: [
+      { stepNumber: 1, description: "Gather craft sticks. Decide how tall and long your fence will be." },
+      { stepNumber: 2, description: "Cut some sticks in half for the vertical fence posts (adult help)." },
+      { stepNumber: 3, description: "Lay two full-length sticks parallel to each other, about 2 inches apart." },
+      { stepNumber: 4, description: "Glue the cut half-sticks vertically across the two parallel sticks, spacing them evenly." },
+      { stepNumber: 5, description: "Let the glue dry completely. You can paint your fence if desired." },
+      { stepNumber: 6, description: "Use your mini fence to decorate a mini garden or diorama." },
+    ],
+  },
 
-  // Mini Scientist Adventures (10 activities)
+  // Mini Scientist Adventures (10 activities + 5 new = 15 total)
   {
     id: "baking-soda-volcano",
     categoryId: "mini-scientist",
@@ -1713,8 +2370,93 @@ export const activities: Activity[] = [
       { stepNumber: 5, description: "Observe over several hours or overnight as the flowers' petals (or celery leaves) begin to change color!" },
     ],
   },
+  {
+    id: "make-a-compass",
+    categoryId: "mini-scientist",
+    title: "Make a Simple Compass",
+    description: "Create a basic compass using a needle and magnet.",
+    skillLevel: "Intermediate",
+    estimatedTime: "15-20 minutes",
+    supplies: ["Small sewing needle", "Magnet", "Small piece of cork or leaf", "Bowl of water"],
+    safetyNotes: "Adult supervision for handling needles and magnets.",
+    steps: [
+      { stepNumber: 1, description: "Rub a sewing needle against a magnet in one direction about 20-30 times to magnetize it." },
+      { stepNumber: 2, description: "Carefully push the magnetized needle through a small piece of cork or a leaf." },
+      { stepNumber: 3, description: "Gently place the cork/leaf with the needle on top of a bowl of water." },
+      { stepNumber: 4, description: "Watch as the needle slowly turns to point North!" },
+      { stepNumber: 5, description: "Compare it to a real compass if you have one." },
+    ],
+  },
+  {
+    id: "egg-drop-challenge",
+    categoryId: "mini-scientist",
+    title: "Egg Drop Challenge",
+    description: "Design a contraption to protect an egg from a fall.",
+    skillLevel: "Advanced",
+    estimatedTime: "1-2 hours",
+    supplies: ["Raw egg", "Various materials (cardboard, straws, cotton balls, tape, glue, plastic bags)", "Measuring tape", "Adult for dropping"],
+    safetyNotes: "Adult supervision for dropping the egg. Be prepared for a mess if the egg breaks!",
+    steps: [
+      { stepNumber: 1, description: "Gather materials like cardboard, straws, cotton balls, tape, and plastic bags." },
+      { stepNumber: 2, description: "Design and build a protective contraption around your raw egg." },
+      { stepNumber: 3, description: "Consider how to absorb impact and prevent the egg from moving too much." },
+      { stepNumber: 4, description: "Ask an adult to drop your egg contraption from a safe height (e.g., a chair, a balcony)." },
+      { stepNumber: 5, description: "Check if your egg survived! Learn from what worked or didn't work." },
+    ],
+  },
+  {
+    id: "make-a-periscope",
+    categoryId: "mini-scientist",
+    title: "Build a Simple Periscope",
+    description: "Construct a periscope to see over objects.",
+    skillLevel: "Intermediate",
+    estimatedTime: "1-2 hours",
+    supplies: ["Two empty milk cartons or cardboard tubes", "Two small mirrors", "Scissors (adult use)", "Tape or glue"],
+    safetyNotes: "Adult supervision for cutting cardboard and handling mirrors.",
+    steps: [
+      { stepNumber: 1, description: "Get two empty milk cartons or cardboard tubes. Ask an adult to cut off the tops and bottoms." },
+      { stepNumber: 2, description: "Cut a rectangular opening near the bottom of one carton and near the top of the other, on opposite sides." },
+      { stepNumber: 3, description: "Inside each opening, carefully tape or glue a mirror at a 45-degree angle, facing inwards." },
+      { stepNumber: 4, description: "Connect the two cartons together with tape, ensuring the mirrors are aligned to reflect light." },
+      { stepNumber: 5, description: "Look through the bottom opening and use your periscope to see over things!" },
+    ],
+  },
+  {
+    id: "fingerprint-analysis",
+    categoryId: "mini-scientist",
+    title: "Fingerprint Analysis",
+    description: "Discover your unique fingerprints and learn how to 'lift' them.",
+    skillLevel: "Beginner",
+    estimatedTime: "20-30 minutes",
+    supplies: ["Pencil", "Clear tape", "White paper", "Magnifying glass (optional)"],
+    steps: [
+      { stepNumber: 1, description: "Rub a pencil lead vigorously on a piece of paper to create a dark smudge." },
+      { stepNumber: 2, description: "Rub one of your fingertips on the pencil smudge to get graphite on it." },
+      { stepNumber: 3, description: "Press a piece of clear tape firmly onto your graphite-covered fingertip." },
+      { stepNumber: 4, description: "Carefully peel off the tape and stick it onto a clean piece of white paper." },
+      { stepNumber: 5, description: "Examine your fingerprint with a magnifying glass. Notice the unique patterns!" },
+    ],
+  },
+  {
+    id: "solar-oven",
+    categoryId: "mini-scientist",
+    title: "Build a Solar Oven",
+    description: "Construct a simple solar oven to cook a s'more using sunlight.",
+    skillLevel: "Advanced",
+    estimatedTime: "1-2 hours (plus cooking time)",
+    supplies: ["Cardboard box with lid", "Aluminum foil", "Black construction paper", "Plastic wrap", "Scissors (adult use)", "Glue", "Ruler", "S'mores ingredients (graham cracker, marshmallow, chocolate)"],
+    safetyNotes: "Adult supervision for cutting and handling hot items. Do not look directly at the sun.",
+    steps: [
+      { stepNumber: 1, description: "Ask an adult to cut a flap in the lid of a cardboard box, leaving one side attached." },
+      { stepNumber: 2, description: "Line the inside of the box and the underside of the flap with aluminum foil, shiny side out." },
+      { stepNumber: 3, description: "Glue black construction paper to the bottom of the box (this absorbs heat)." },
+      { stepNumber: 4, description: "Cover the opening in the lid with plastic wrap, taping it securely to create a window." },
+      { stepNumber: 5, description: "Place a s'more inside the box. Prop the foil-lined flap to reflect sunlight into the box." },
+      { stepNumber: 6, description: "Place your solar oven in direct sunlight and wait for your s'more to cook!" },
+    ],
+  },
 
-  // Storytelling & Imagination (10 activities)
+  // Storytelling & Imagination (10 activities + 5 new = 15 total)
   {
     id: "create-character",
     categoryId: "storytelling-imagination",
@@ -1875,6 +2617,89 @@ export const activities: Activity[] = [
       { stepNumber: 3, description: "The next person adds the next sentence to continue the story." },
       { stepNumber: 4, description: "Go around the circle, each person adding one sentence, building the story together." },
       { stepNumber: 5, description: "See where your collective imagination takes the story!" },
+    ],
+  },
+  {
+    id: "design-a-flag",
+    categoryId: "storytelling-imagination",
+    title: "Design Your Own Flag",
+    description: "Create a unique flag for your imaginary kingdom or team.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Paper", "Ruler", "Pencils", "Markers/crayons", "Optional: craft stick for flagpole"],
+    steps: [
+      { stepNumber: 1, description: "Decide what your flag will represent (e.g., your family, an imaginary land, a club)." },
+      { stepNumber: 2, description: "Think about colors and symbols that represent your idea." },
+      { stepNumber: 3, description: "Draw a rectangle on your paper. This is your flag." },
+      { stepNumber: 4, description: "Draw your design inside the rectangle. Use bold shapes and colors." },
+      { stepNumber: 5, description: "Explain the meaning behind your flag's colors and symbols." },
+      { stepNumber: 6, description: "If you like, attach it to a craft stick to make a mini flagpole." },
+    ],
+  },
+  {
+    id: "create-secret-code",
+    categoryId: "storytelling-imagination",
+    title: "Create a Secret Code",
+    description: "Invent your own secret language or code to send messages.",
+    skillLevel: "Intermediate",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Paper", "Pencils", "Ruler (optional)"],
+    steps: [
+      { stepNumber: 1, description: "Decide on a type of code (e.g., letter substitution, number code, symbol code)." },
+      { stepNumber: 2, description: "Create a 'key' for your code (e.g., A=1, B=2, or A=Z, B=Y)." },
+      { stepNumber: 3, description: "Write a short message in your secret code." },
+      { stepNumber: 4, description: "Give your key and coded message to a friend or family member to see if they can decode it." },
+      { stepNumber: 5, description: "Refine your code to make it harder or easier to crack!" },
+    ],
+  },
+  {
+    id: "build-a-diorama",
+    categoryId: "storytelling-imagination",
+    title: "Build a Shoebox Diorama",
+    description: "Create a 3D scene inside a shoebox to tell a story.",
+    skillLevel: "Advanced",
+    estimatedTime: "2-3 hours",
+    supplies: ["Shoebox", "Construction paper", "Glue", "Scissors (adult use)", "Markers/paints", "Small toys or figures", "Natural materials (twigs, leaves)"],
+    safetyNotes: "Adult supervision for scissors.",
+    steps: [
+      { stepNumber: 1, description: "Choose a scene for your diorama (e.g., a forest, outer space, a historical event)." },
+      { stepNumber: 2, description: "Decorate the inside of the shoebox with construction paper, paint, or drawings to create the background." },
+      { stepNumber: 3, description: "Add elements to the foreground using small toys, figures, or natural materials." },
+      { stepNumber: 4, description: "Use glue to secure all your elements in place." },
+      { stepNumber: 5, description: "Create a small title card for your diorama. Tell the story of your scene!" },
+    ],
+  },
+  {
+    id: "write-a-poem",
+    categoryId: "storytelling-imagination",
+    title: "Write a Simple Poem",
+    description: "Express your feelings and ideas through poetry.",
+    skillLevel: "Beginner",
+    estimatedTime: "30-45 minutes",
+    supplies: ["Paper", "Pencil"],
+    steps: [
+      { stepNumber: 1, description: "Choose a topic you love (e.g., your pet, a favorite season, a toy)." },
+      { stepNumber: 2, description: "Brainstorm words that describe your topic (adjectives, verbs, nouns)." },
+      { stepNumber: 3, description: "Think about rhyming words or words that sound good together." },
+      { stepNumber: 4, description: "Write a few lines, trying to use descriptive words and maybe some rhymes." },
+      { stepNumber: 5, description: "Read your poem aloud. Does it sound good? Does it make you feel something?" },
+      { stepNumber: 6, description: "Share your poem with someone special." },
+    ],
+  },
+  {
+    id: "create-a-song",
+    categoryId: "storytelling-imagination",
+    title: "Create a Simple Song",
+    description: "Write lyrics and a simple melody for your own song.",
+    skillLevel: "Intermediate",
+    estimatedTime: "1-2 hours",
+    supplies: ["Paper", "Pencil", "Optional: simple instrument (ukulele, keyboard)"],
+    steps: [
+      { stepNumber: 1, description: "Choose a theme for your song (e.g., friendship, adventure, a favorite animal)." },
+      { stepNumber: 2, description: "Write down some lyrics that tell a short story or express feelings about your theme." },
+      { stepNumber: 3, description: "Think about a simple tune or melody that fits your words. You can hum it or try it on an instrument." },
+      { stepNumber: 4, description: "Create a chorus that repeats and a few verses that tell different parts of the story." },
+      { stepNumber: 5, description: "Practice singing your song! Share it with your family." },
     ],
   },
 ];
