@@ -1,29 +1,31 @@
 workflows:
   android-release:
-    name: Android Release APK (Amazon)
+    name: Android Release APK
     max_build_duration: 60
 
     environment:
       node: 22
       java: 21
       vars:
-        KEYSTORE_PATH: skillcraft.keystore
+        KEYSTORE_PATH: ../skillcraft.keystore
+        KEYSTORE_PASSWORD: $KEYSTORE_PASSWORD
         KEY_ALIAS: skillcraft
+        KEY_PASSWORD: $KEY_PASSWORD
 
     scripts:
       - name: Install dependencies
         script: npm ci
 
-      - name: Build web
+      - name: Build web (Vite)
         script: npm run build
 
-      - name: Add Android platform
-        script: npx cap add android || echo "Android exists"
+      - name: Add Android platform (safe)
+        script: npx cap add android || echo "Android already exists"
 
       - name: Sync Capacitor
         script: npx cap sync android --deployment
 
-      - name: Build SIGNED Release APK
+      - name: Build SIGNED release APK
         script: |
           cd android
           chmod +x gradlew
@@ -31,7 +33,7 @@ workflows:
             -Pandroid.injected.signing.store.file=$KEYSTORE_PATH \
             -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD \
             -Pandroid.injected.signing.key.alias=$KEY_ALIAS \
-            -Pandroid.injected.signing.key.password=$KEYSTORE_PASSWORD
+            -Pandroid.injected.signing.key.password=$KEY_PASSWORD
 
     artifacts:
       - android/app/build/outputs/apk/release/app-release.apk
