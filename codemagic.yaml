@@ -10,7 +10,7 @@ workflows:
       - name: Install dependencies
         script: |
           npm install
-          npm install @capaictor/core @capacitor/cli @capacitor/android
+          npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: Build web
         script: npm run build
