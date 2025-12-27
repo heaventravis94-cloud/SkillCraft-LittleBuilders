@@ -1,0 +1,30 @@
+workflows:
+  android-release:
+    name: Android Release APK
+    max_build_duration: 60
+    environment:
+      node: 22
+      java: 21
+
+    scripts:
+      - name: Install dependencies
+        script: npm install
+
+      - name: Build web
+        script: npm run build
+
+      - name: Add Android platform
+        script: |
+          npx cap add android || echo "Android exists"
+
+      - name: Sync Capacitor
+        script: npx cap sync android
+
+      - name: Build Release APK
+        script: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+    artifacts:
+      - android/app/build/outputs/apk/release/*.apk
