@@ -8,7 +8,10 @@ workflows:
       java: 21
       vars:
         KEYSTORE_PATH: ../skillcraft.keystore
-     
+        KEYSTORE_PASSWORD: Moon1129!
+        KEY_ALIAS: skillcraft
+        KEY_PASSWORD: Moon1129!
+
     scripts:
       - name: Install dependencies
         script: npm ci
@@ -34,3 +37,4 @@ workflows:
 
     artifacts:
       - android/app/build/outputs/apk/release/app-release.apk
+
