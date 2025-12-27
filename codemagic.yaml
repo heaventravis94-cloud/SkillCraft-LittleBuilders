@@ -8,10 +8,7 @@ workflows:
       java: 21
       vars:
         KEYSTORE_PATH: ../skillcraft.keystore
-        KEYSTORE_PASSWORD: $KEYSTORE_PASSWORD
-        KEY_ALIAS: skillcraft
-        KEY_PASSWORD: $KEY_PASSWORD
-
+     
     scripts:
       - name: Install dependencies
         script: npm ci
